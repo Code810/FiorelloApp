@@ -11,6 +11,7 @@ namespace FiorelloApp.ViewModels
         public Banner Banner { get; set; }
         public IEnumerable<BannerContent> BannerContents { get; set; }
         public IEnumerable<Expert> Experts { get; set; }
+        public IEnumerable<Blog> Blogs { get; set; }
 
 
     }

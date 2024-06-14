@@ -30,6 +30,7 @@ namespace FiorelloApp.Controllers
                 Banner = _fiorellaDbContext.Banners.AsNoTracking().SingleOrDefault(),
                 BannerContents = _fiorellaDbContext.BannerContents.AsNoTracking().ToList(),
                 Experts = _fiorellaDbContext.Experts.AsNoTracking().ToList(),
+                Blogs = _fiorellaDbContext.Blogs.OrderByDescending(b => b.Id).Take(3).AsNoTracking().ToList(),
 
             };
             return View(homeVm);

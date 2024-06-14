@@ -195,51 +195,25 @@
                     </div>
                 </div>
                 <div class="row pb-5">
-                    <div class="col-md-6 col-lg-4">
+                    @foreach (var blog in Model.Blogs)
+            {
+                <div class="col-md-6 col-lg-4">
                         <div class="item">
                             <div class="img position-relative">
-                                <img src="~/img/blog-feature-img-1.jpg" class="img-fluid" alt="">
+                                <a asp-controller="blog" asp-action="detail" asp-route-id="@blog.Id"><img src="~/img/@blog.ImageUrl" class="img-fluid" alt=""></a>
                                 <div class="date rounded bg-light position-absolute py-1 px-2">
-                                    <span>29.12.2019</span>
+                                    <span>@blog.CreatedDate?.ToString("dd.MM.yyyy")</span>
                                 </div>
                             </div>
                             <div class="text mt-3 text-center px-5">
-                                <h5>Flower Power</h5>
-                                <p class="text-black-50">Class aptent taciti sociosqu ad litora torquent per conubia
-                                    nostra, per</p>
+                                 <a class="text-decoration-none text-dark" asp-controller="blog" asp-action="detail" asp-route-id="@blog.Id">
+                                <h5>@blog.Title</h5>
+                                </a>
+                                <p class="text-black-50">@blog.ShortDesc ...</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="item">
-                            <div class="img position-relative">
-                                <img src="~/img/blog-feature-img-3.jpg" class="img-fluid" alt="">
-                                <div class="date rounded bg-light position-absolute py-1 px-2">
-                                    <span>29.12.2019</span>
-                                </div>
-                            </div>
-                            <div class="text mt-3 text-center px-5">
-                                <h5>Local Florists</h5>
-                                <p class="text-black-50">Class aptent taciti sociosqu ad litora torquent per conubia
-                                    nostra, per</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="item">
-                            <div class="img position-relative">
-                                <img src="~/img/blog-feature-img-4.jpg" class="img-fluid" alt="">
-                                <div class="date rounded bg-light position-absolute py-1 px-2">
-                                    <span>29.12.2019</span>
-                                </div>
-                            </div>
-                            <div class="text mt-3 text-center px-5">
-                                <h5>Flower Beauty</h5>
-                                <p class="text-black-50">Class aptent taciti sociosqu ad litora torquent per conubia
-                                    nostra, per</p>
-                            </div>
-                        </div>
-                    </div>
+            }
                 </div>
             </div>
         </section>

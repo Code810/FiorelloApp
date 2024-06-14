@@ -15,6 +15,7 @@ namespace FiorelloApp.Data
         public DbSet<Banner> Banners { get; set; }
         public DbSet<BannerContent> BannerContents { get; set; }
         public DbSet<Expert> Experts { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
         public FiorelloDbContext(DbContextOptions options) : base(options)
         {
         }
