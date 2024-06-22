@@ -15,8 +15,12 @@ namespace FiorelloApp.Controllers
 
         public IActionResult Index()
         {
-            return View(_fiorellaDbContext.Blogs.OrderByDescending(b => b.Id).AsNoTracking().ToList());
+            var query = _fiorellaDbContext.Blogs.AsQueryable();
+            ViewBag.BlogCount = query.Count();
+            var datas = query.OrderByDescending(b => b.Id).Take(3).AsNoTracking().ToList();
+            return View(datas);
         }
+
 
         public IActionResult Detail(int? id)
         {
@@ -24,6 +28,12 @@ namespace FiorelloApp.Controllers
             var blog = _fiorellaDbContext.Blogs.AsNoTracking().FirstOrDefault(b => b.Id == id);
             if (blog is null) return NotFound();
             return View(blog);
+        }
+
+        public IActionResult LoadMore(int offset = 3)
+        {
+            var datas = _fiorellaDbContext.Blogs.Skip(offset).Take(3).ToList();
+            return PartialView("_BlogPartialView", datas);
         }
     }
 }

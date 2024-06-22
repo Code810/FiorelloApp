@@ -1,4 +1,29 @@
 $(document).ready(function () {
+    //LOADMORE
+    let skip = 3;
+    $(document).on('click', '#loadMore', function () {
+        
+        $.ajax({
+            url: "/blog/LoadMore?offset="+skip,
+            method: "get",
+            success: function (datas) {
+                $("#blogList").append(datas);
+                skip += 3;
+                if (skip >= $("#blogCount").val()) {
+                    $("#loadMore").remove();
+                }
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        })
+    })
+
+
+
+
+
+
 
     // HEADER
 
