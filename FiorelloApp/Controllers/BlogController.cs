@@ -35,5 +35,11 @@ namespace FiorelloApp.Controllers
             var datas = _fiorellaDbContext.Blogs.Skip(offset).Take(3).ToList();
             return PartialView("_BlogPartialView", datas);
         }
+
+        public IActionResult SearchBlog(string text)
+        {
+            var datas = _fiorellaDbContext.Blogs.Where(b => b.Title.ToLower().Contains(text.ToLower()) || b.Desc.ToLower().Contains(text.ToLower())).ToList();
+            return PartialView("_SearchPartialView", datas); ;
+        }
     }
 }

@@ -20,7 +20,25 @@ $(document).ready(function () {
     })
 
 
-
+    //SEARCH 
+    $(document).on("keyup", "#input-search", function ()
+    {
+        $("#searchList li").slice(1).remove();
+        let value = $(this).val().trim();
+        if (value) {
+            $.ajax({
+                url: "/blog/SearchBlog?text=" + value,
+                method: "get",
+                success: function (datas) {
+                    $("#searchList").append(datas);
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+                })
+        }
+     
+    })
 
 
 
