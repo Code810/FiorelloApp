@@ -64,26 +64,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    @foreach (var product in Model.products)
-            {
-                <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
-                        <div class="product-item text-center" data-id="@product.Category.Name.ToLower()">
-                            <div class="img">
-                                <a href="">
-                                    <img src="~/img/@(product.ProductImages.Any(i=>i.IsMain)?product.ProductImages.FirstOrDefault(i=>i.IsMain).ImageUrl:product.ProductImages.FirstOrDefault().ImageUrl)" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="title mt-3">
-                                <h6>@product.Name</h6>
-                            </div>
-                            <div class="price">
-                                <span class="text-black-50">Add to cart</span>
-                                <span class="text-black-50">$@product.Price</span>
-                            </div>
-                        </div>
-                    </div>
-            }
-                    
+                        @await Component.InvokeAsync("Product");               
                 </div>
             </div>
         </section>
@@ -195,25 +176,7 @@
                     </div>
                 </div>
                 <div class="row pb-5">
-                    @foreach (var blog in Model.Blogs)
-            {
-                <div class="col-md-6 col-lg-4">
-                        <div class="item">
-                            <div class="img position-relative">
-                                <a asp-controller="blog" asp-action="detail" asp-route-id="@blog.Id"><img src="~/img/@blog.ImageUrl" class="img-fluid" alt=""></a>
-                                <div class="date rounded bg-light position-absolute py-1 px-2">
-                                    <span>@blog.CreatedDate?.ToString("dd.MM.yyyy")</span>
-                                </div>
-                            </div>
-                            <div class="text mt-3 text-center px-5">
-                                 <a class="text-decoration-none text-dark" asp-controller="blog" asp-action="detail" asp-route-id="@blog.Id">
-                                <h5>@blog.Title</h5>
-                                </a>
-                                <p class="text-black-50">@blog.ShortDesc ...</p>
-                            </div>
-                        </div>
-                    </div>
-            }
+                   @await Component.InvokeAsync("Blog");
                 </div>
             </div>
         </section>

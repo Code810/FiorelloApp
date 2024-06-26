@@ -17,8 +17,7 @@ namespace FiorelloApp.Controllers
         {
             var query = _fiorellaDbContext.Blogs.AsQueryable();
             ViewBag.BlogCount = query.Count();
-            var datas = query.OrderByDescending(b => b.Id).Take(3).AsNoTracking().ToList();
-            return View(datas);
+            return View();
         }
 
 
