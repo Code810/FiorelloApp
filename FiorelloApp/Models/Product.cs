@@ -10,5 +10,6 @@ namespace FiorelloApp.Models
         public int CategoryId { get; set; }
         public Category Category { get; set; }
         public List<ProductImage> ProductImages { get; set; }
+        public int Count { get; set; }
     }
 }

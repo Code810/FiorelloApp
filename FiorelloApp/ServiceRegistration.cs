@@ -1,4 +1,6 @@
 ﻿using FiorelloApp.Data;
+using FiorelloApp.Services;
+using FiorelloApp.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace FiorelloApp
@@ -12,6 +14,9 @@ namespace FiorelloApp
             {
                 option.UseSqlServer(config.GetConnectionString("DefaultConnection"));
             });
+            services.AddSession();
+            services.AddHttpContextAccessor();
+            services.AddScoped<IBasketService, BasketService>();
         }
     }
 }

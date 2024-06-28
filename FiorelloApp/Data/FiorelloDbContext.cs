@@ -1,6 +1,4 @@
-﻿
-using FiorelloApp.Data.Configurations;
-using FiorelloApp.Models;
+﻿using FiorelloApp.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace FiorelloApp.Data
@@ -16,13 +14,14 @@ namespace FiorelloApp.Data
         public DbSet<BannerContent> BannerContents { get; set; }
         public DbSet<Expert> Experts { get; set; }
         public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Setting> Settings { get; set; }
         public FiorelloDbContext(DbContextOptions options) : base(options)
         {
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
         }
     }
 }
