@@ -16,6 +16,34 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\seidb\OneDrive\Masaüstü\FiorellaApp\FiorelloApp\FiorelloApp
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/seidb/OneDrive/Masaüstü/FiorellaApp/FiorelloApp/FiorelloApp/Areas/AdminArea/Views/Category/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXENhdGVnb3J5XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seidb/OneDrive/Masaüstü/FiorellaApp/FiorelloApp/FiorelloApp/Areas/AdminArea/Views/Category/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXENhdGVnb3J5XERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seidb/OneDrive/Masaüstü/FiorellaApp/FiorelloApp/FiorelloApp/Areas/AdminArea/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXENhdGVnb3J5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seidb/OneDrive/Masaüstü/FiorellaApp/FiorelloApp/FiorelloApp/Areas/AdminArea/Views/DashBoard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXERhc2hCb2FyZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seidb/OneDrive/Masaüstü/FiorellaApp/FiorelloApp/FiorelloApp/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFNoYXJlZFxfQWRtaW5MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seidb/OneDrive/Masaüstü/FiorellaApp/FiorelloApp/FiorelloApp/Areas/AdminArea/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seidb/OneDrive/Masaüstü/FiorellaApp/FiorelloApp/FiorelloApp/Areas/AdminArea/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/seidb/OneDrive/Masaüstü/FiorellaApp/FiorelloApp/FiorelloApp/Views/Basket/ShowBasket.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFza2V0XFNob3dCYXNrZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

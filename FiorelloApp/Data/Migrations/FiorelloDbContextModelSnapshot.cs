@@ -114,6 +114,10 @@ namespace FiorelloApp.Data.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(25)

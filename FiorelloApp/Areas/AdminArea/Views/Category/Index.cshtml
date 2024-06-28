@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Category>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Category table</h4>
+                    <a class="btn btn-outline-success" asp-action="create" >Create</a>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th> Name </th>
+                                <th> Description</th>
+                                <th> Created date</th>
+                                <th> Settings</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           @foreach (var category in Model)
+                            {
+                                <tr>
+                                    <td>@category.Name</td>
+                                    <td class="text-wrap">@((category.Description.Length > 30) ? category.Description.Substring(0, 30) : category.Description)...</td>
+                                    <td>@category.CreatedDate?.ToString("dd.MM.yyyy")</td>
+                                    <td>
+                                        <a class="text-primary pe-2 text-decoration-none" asp-action="detail" asp-route-id="@category.Id">
+                                            
+                                            <i class="fa fa-info-circle"></i>
+                                        </a>
+                                        <a class="text-succes pe-2 text-decoration-none" asp-action="update" asp-route-id="@category.Id">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                        <a class="text-danger text-decoration-none" asp-action="delete" asp-route-id="@category.Id">
+                                            <i class="fa fa-times-circle"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

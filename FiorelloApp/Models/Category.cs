@@ -6,6 +6,7 @@ namespace FiorelloApp.Models
     {
         [Required, MaxLength(25)]
         public string Name { get; set; }
+        public string Description { get; set; }
         public List<Product> Products { get; set; }
     }
 }
