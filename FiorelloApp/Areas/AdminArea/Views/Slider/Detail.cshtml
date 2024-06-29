@@ -1,0 +1,15 @@
+﻿@model Slider
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img width="900" height="400" src="~/img/@Model.ImageUrl" alt="" />
+                    <p class="text-success">@Model.CreatedDate?.ToString("dd.MM.yyyy")</p>
+                    <a class="btn btn-dark" asp-action="index">Go Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

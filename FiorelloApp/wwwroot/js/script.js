@@ -20,7 +20,8 @@ $(document).ready(function () {
     })
 
 
-    SEARCH 
+    //search
+     
     $(document).on("keyup", "#input-search", function ()
     {
         $("#searchList li").slice(1).remove();

@@ -67,5 +67,38 @@ namespace FiorelloApp.Areas.AdminArea.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+        public async Task<IActionResult> Update(int? id)
+        {
+            if (id == null) return BadRequest();
+            var category = await _context.Categories.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
+            if (category == null) return NotFound();
+            CategoryUpdateVM categoryVm = new()
+            {
+
+                Name = category.Name,
+                Description = category.Description,
+            };
+            return View(categoryVm);
+        }
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Update(int? id, CategoryUpdateVM categoryUpdateVM)
+        {
+            if (id == null) return BadRequest();
+            if (!ModelState.IsValid) return View(categoryUpdateVM);
+
+            var existCategory = await _context.Categories.FirstOrDefaultAsync(p => p.Id == id);
+            if (existCategory == null) return NotFound();
+            if (_context.Categories.Any(p => p.Name.ToLower() == categoryUpdateVM.Name.ToLower() && p.Id != id))
+            {
+                ModelState.AddModelError("Name", "Bu adli category artiq var");
+                return View(categoryUpdateVM);
+            }
+            existCategory.Name = categoryUpdateVM.Name;
+            existCategory.Description = categoryUpdateVM.Description;
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+        }
     }
 }

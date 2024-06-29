@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9iqeFSbvA+xoDLFCxl5gian7ZVkOjj9GyzDvk2/ukr4=",
+  "Hash": "HhSYh4R3LK9lAhKWrhkfOzSt+4BfNli7i2M52yZo4Oc=",
   "Source": "FiorelloApp",
   "BasePath": "_content/FiorelloApp",
   "Mode": "Default",
@@ -5644,6 +5644,23 @@
       "OriginalItemSpec": "wwwroot\\css\\style.css.map"
     },
     {
+      "Identity": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\8c28390b-cd17-4fcd-9695-6cba3a23334d.jpg",
+      "SourceId": "FiorelloApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\",
+      "BasePath": "_content/FiorelloApp",
+      "RelativePath": "img/8c28390b-cd17-4fcd-9695-6cba3a23334d.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\8c28390b-cd17-4fcd-9695-6cba3a23334d.jpg"
+    },
+    {
       "Identity": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\blog-feature-img-1.jpg",
       "SourceId": "FiorelloApp",
       "SourceType": "Discovered",
@@ -5693,6 +5710,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\blog-feature-img-4.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\ef37b0c2-ce84-4ca0-a0b4-213943a06201.jpg",
+      "SourceId": "FiorelloApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\",
+      "BasePath": "_content/FiorelloApp",
+      "RelativePath": "img/ef37b0c2-ce84-4ca0-a0b4-213943a06201.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\ef37b0c2-ce84-4ca0-a0b4-213943a06201.jpg"
     },
     {
       "Identity": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\favicon.png",
