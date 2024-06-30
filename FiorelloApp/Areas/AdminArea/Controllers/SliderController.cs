@@ -64,5 +64,61 @@ namespace FiorelloApp.Areas.AdminArea.Controllers
 
 
         }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null) return BadRequest();
+            var slider = await _context.Sliders.FirstOrDefaultAsync(x => x.Id == id);
+            if (slider == null) return NotFound();
+
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", slider.ImageUrl);
+            if (System.IO.File.Exists(path)) System.IO.File.Delete(path);
+
+            _context.Sliders.Remove(slider);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Update(int? id)
+        {
+            if (id == null) return BadRequest();
+            var slider = await _context.Sliders.FirstOrDefaultAsync(s => s.Id == id);
+            if (slider == null) return NotFound();
+            return View(new SliderUpdateVM { ImageUrl = slider.ImageUrl });
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Update(int? id, SliderUpdateVM sliderUpdateVM)
+        {
+            if (id == null) return BadRequest();
+            var slider = await _context.Sliders.FirstOrDefaultAsync(s => s.Id == id);
+            if (slider == null) return NotFound();
+            var file = sliderUpdateVM.Photo;
+            sliderUpdateVM.ImageUrl = slider.ImageUrl;
+
+            if (file == null)
+            {
+                ModelState.AddModelError("Photo", "Shekil bos ola bilmez");
+                return View(sliderUpdateVM);
+            }
+            if (!file.CheckContentType())
+            {
+                ModelState.AddModelError("Photo", "Duzgun file secim edin");
+                return View(sliderUpdateVM);
+            }
+            if (file.CheckSize(500))
+            {
+                ModelState.AddModelError("Photo", "faylin olcusu 300kb-dan az olmalidir");
+                return View(sliderUpdateVM);
+            }
+            string fileName = await file.SaveFile();
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", slider.ImageUrl);
+            if (System.IO.File.Exists(path)) System.IO.File.Delete(path);
+            slider.ImageUrl = fileName;
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }
