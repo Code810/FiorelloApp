@@ -1,0 +1,35 @@
+﻿@model ProductDetailVM
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body d-flex">
+                    <div class="col-lg-6">
+                        <p>Main Photo</p>
+                        <img src="~/img/@Model.ProductImages.FirstOrDefault(p=>p.IsMain).ImageUrl" width="200" height="200" class="overflow-hidden border border-4 border-dark" />
+                        <div class=" mt-2">
+
+                            @foreach (var image in Model.ProductImages)
+                            {
+                                if (!image.IsMain)
+                                {
+                                    <a asp-action="SetMainPhoto" asp-route-id="@image.Id"> <img src="~/img/@image.ImageUrl" alt="" width="40" height="40" class="mdi-cursor-pointer" /></a>
+                                }
+                            }
+                            <p>Click photo for change Main photo</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-5">
+                        <h1 class="card-title">@Model.Name</h1>
+                        <h1 class="card-title">@Model.Price</h1>
+                        <h1 class="card-title">@Model.CategoryName</h1>
+                        <h1 class="card-title">@Model.Count</h1>
+                        <p class="text-success">@Model.CreatedDate?.ToString("dd.MM.yyyy")</p>
+                        <a class="btn btn-dark" asp-action="index">Go Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

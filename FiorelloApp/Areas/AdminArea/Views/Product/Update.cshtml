@@ -1,0 +1,70 @@
+﻿@model ProductUpdateVM
+@{
+    var categories = ViewBag.Categories;
+}
+<div class="container">
+    <div class="row">
+        <div class=" grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                        <p>Main Photo</p>
+                        <img src="~/img/@Model.Images.FirstOrDefault(p=>p.IsMain).ImageUrl" width="150" height="150" class="overflow-hidden border border-4 border-dark" />
+                        
+                            @foreach (var image in Model.Images)
+                            {
+                                if (!image.IsMain)
+                                {
+                            <span class="position-relative">
+                                <img src="~/img/@image.ImageUrl" alt="" width="150" height="150"  />
+                                <a asp-action="DeleteProductPhoto" asp-route-id="@image.Id" class="text-danger position-absolute" style="right:10px"><i class="fa fa-trash-o"></i></a>
+                                 </span>
+                                   
+                                }
+                            }
+
+                    <div class="col-md-5">
+                        <h4 class="card-title">Product Update form</h4>
+                        <form enctype="multipart/form-data"  class="forms-sample" method="post">
+                            <div class="form-group">
+                                <label asp-for="Name"></label>
+                                <input asp-for="Name" class="form-control" placeholder="Name">
+                                <span class="text-danger" asp-validation-for="Name"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Price"> </label>
+                                <input asp-for="Price" class="form-control" placeholder="Price">
+                                <span class="text-danger" asp-validation-for="Price"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Count"> </label>
+                                <input asp-for="Count" class="form-control" placeholder="Count">
+                                <span class="text-danger" asp-validation-for="Count"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Photos"> </label>
+                                <input asp-for="Photos" class="form-control">
+                                <span class="text-danger" asp-validation-for="Photos"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Large select</label>
+                                <select class="form-select form-select-lg" asp-for="CategoryId" asp-items="@categories">
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-gradient-primary me-2">Update</button>
+                            <a class="btn btn-light" asp-action="index">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+}
+
+
