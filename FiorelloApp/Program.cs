@@ -16,7 +16,7 @@ app.UseStaticFiles();
 app.UseSession();
 
 app.UseRouting();
-
+app.UseAuthentication();  //user sistemleri ile isledikde yazilmalidi
 app.UseAuthorization();
 app.MapControllerRoute(
            name: "areas",

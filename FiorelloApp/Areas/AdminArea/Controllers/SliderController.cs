@@ -1,6 +1,7 @@
 ﻿using FiorelloApp.Areas.AdminArea.ViewModels.Slider;
 using FiorelloApp.Data;
 using FiorelloApp.Extensions;
+using FiorelloApp.Helpers;
 using FiorelloApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -71,8 +72,7 @@ namespace FiorelloApp.Areas.AdminArea.Controllers
             var slider = await _context.Sliders.FirstOrDefaultAsync(x => x.Id == id);
             if (slider == null) return NotFound();
 
-            string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", slider.ImageUrl);
-            if (System.IO.File.Exists(path)) System.IO.File.Delete(path);
+            Helper.DeleteImage(slider.ImageUrl);
 
             _context.Sliders.Remove(slider);
             await _context.SaveChangesAsync();
@@ -113,8 +113,7 @@ namespace FiorelloApp.Areas.AdminArea.Controllers
                 return View(sliderUpdateVM);
             }
             string fileName = await file.SaveFile();
-            string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", slider.ImageUrl);
-            if (System.IO.File.Exists(path)) System.IO.File.Delete(path);
+            Helper.DeleteImage(slider.ImageUrl);
             slider.ImageUrl = fileName;
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

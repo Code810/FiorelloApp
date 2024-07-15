@@ -1321,18 +1321,6 @@
       "PackagePath": "staticwebassets\\css\\style.css.map"
     },
     {
-      "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\3117e12f-bb43-4d2d-bfdf-9daf811e14f7.jpg",
-      "PackagePath": "staticwebassets\\img\\3117e12f-bb43-4d2d-bfdf-9daf811e14f7.jpg"
-    },
-    {
-      "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\75d3dcdb-dc46-4c23-9457-400c4b2fa605.jpg",
-      "PackagePath": "staticwebassets\\img\\75d3dcdb-dc46-4c23-9457-400c4b2fa605.jpg"
-    },
-    {
-      "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\7fe02ee3-d88e-4954-ac3b-4df2adac6661.jpg",
-      "PackagePath": "staticwebassets\\img\\7fe02ee3-d88e-4954-ac3b-4df2adac6661.jpg"
-    },
-    {
       "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\blog-feature-img-1.jpg",
       "PackagePath": "staticwebassets\\img\\blog-feature-img-1.jpg"
     },
@@ -1343,26 +1331,6 @@
     {
       "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\blog-feature-img-4.jpg",
       "PackagePath": "staticwebassets\\img\\blog-feature-img-4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\d7f1d4b6-2fdd-4034-ace5-67529f1a47da.jpeg",
-      "PackagePath": "staticwebassets\\img\\d7f1d4b6-2fdd-4034-ace5-67529f1a47da.jpeg"
-    },
-    {
-      "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\e6cb2c29-d480-44df-82ce-b4fcb07f63d1.jpeg",
-      "PackagePath": "staticwebassets\\img\\e6cb2c29-d480-44df-82ce-b4fcb07f63d1.jpeg"
-    },
-    {
-      "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\f0594ae2-2974-47e3-8f21-9c63d5af01ba.jpeg",
-      "PackagePath": "staticwebassets\\img\\f0594ae2-2974-47e3-8f21-9c63d5af01ba.jpeg"
-    },
-    {
-      "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\f0a62831-d1f3-4cf9-97fa-eecddee333b3.jpeg",
-      "PackagePath": "staticwebassets\\img\\f0a62831-d1f3-4cf9-97fa-eecddee333b3.jpeg"
-    },
-    {
-      "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\f2bb4baa-2161-4df4-ad60-66bd18d3a19d.jpg",
-      "PackagePath": "staticwebassets\\img\\f2bb4baa-2161-4df4-ad60-66bd18d3a19d.jpg"
     },
     {
       "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\favicon.png",
@@ -1459,6 +1427,14 @@
     {
       "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\shop-11-img.jpg",
       "PackagePath": "staticwebassets\\img\\shop-11-img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\shop-12-img.jpg",
+      "PackagePath": "staticwebassets\\img\\shop-12-img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\shop-13-img.jpg",
+      "PackagePath": "staticwebassets\\img\\shop-13-img.jpg"
     },
     {
       "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\shop-14-img.jpg",

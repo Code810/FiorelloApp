@@ -48,6 +48,7 @@ namespace FiorelloApp.Controllers
             string basket = Request.Cookies["basket"];
             List<BasketVM> list;
             if (basket is null) list = new();
+
             else
             {
                 list = JsonConvert.DeserializeObject<List<BasketVM>>(basket);

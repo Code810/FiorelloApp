@@ -1,10 +1,15 @@
 ﻿using FiorelloApp.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace FiorelloApp.Data
 {
-    public class FiorelloDbContext : DbContext
+    public class FiorelloDbContext : IdentityDbContext<AppUser>
     {
+        public FiorelloDbContext(DbContextOptions<FiorelloDbContext> options) : base(options)
+        {
+        }
+
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<SliderContent> SliderContents { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -15,13 +20,15 @@ namespace FiorelloApp.Data
         public DbSet<Expert> Experts { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Setting> Settings { get; set; }
-        public FiorelloDbContext(DbContextOptions options) : base(options)
-        {
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
+
+
+
         }
     }
 }

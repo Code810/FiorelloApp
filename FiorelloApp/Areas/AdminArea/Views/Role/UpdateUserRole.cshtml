@@ -1,0 +1,28 @@
+﻿@using FiorelloApp.Areas.AdminArea.ViewModels.User;
+@model RoleUpdateVM
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">@Model.Username</h1>
+
+                    <form method="post">
+                        @foreach (var role in Model.Roles)
+                        {
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input name="newRoles" @(Model.UserRoles.Contains(role.Name) ?"checked":"")
+                                            type="checkbox" value="@role.Name" class="form-check-input">@role.Name
+                                    </label>
+                                </div>
+                        }
+                        <button type="submit" class="btn btn-success">Update</button>
+                        <a class="btn btn-dark" asp-controller="user" asp-action="index">Go Back</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

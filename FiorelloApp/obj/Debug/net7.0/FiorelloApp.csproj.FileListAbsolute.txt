@@ -250,3 +250,4 @@ C:\Users\seidb\OneDrive\Masaüstü\FiorellaApp\FiorelloApp\FiorelloApp\bin\Debug
 C:\Users\seidb\OneDrive\Masaüstü\FiorellaApp\FiorelloApp\FiorelloApp\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\seidb\OneDrive\Masaüstü\FiorellaApp\FiorelloApp\FiorelloApp\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\seidb\OneDrive\Masaüstü\FiorellaApp\FiorelloApp\FiorelloApp\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\seidb\OneDrive\Masaüstü\FiorellaApp\FiorelloApp\FiorelloApp\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

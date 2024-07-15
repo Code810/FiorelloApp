@@ -31,6 +31,7 @@ namespace FiorelloApp.Areas.AdminArea.Controllers
         {
             ViewBag.Categories = new SelectList(await _context.Categories.ToListAsync(), "Id", "Name");
             return View();
+
         }
         [HttpPost]
         [AutoValidateAntiforgeryToken]
