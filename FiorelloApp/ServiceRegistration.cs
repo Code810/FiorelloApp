@@ -19,6 +19,7 @@ namespace FiorelloApp
             services.AddSession();
             services.AddHttpContextAccessor();
             services.AddScoped<IBasketService, BasketService>();
+            services.AddScoped<IEmailService, EmailService>();
             services.AddIdentity<AppUser, IdentityRole>(options =>
             {
                 options.Password.RequiredLength = 8;

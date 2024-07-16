@@ -1321,6 +1321,14 @@
       "PackagePath": "staticwebassets\\css\\style.css.map"
     },
     {
+      "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\emailTemplate\\emailConfirm.html",
+      "PackagePath": "staticwebassets\\emailTemplate\\emailConfirm.html"
+    },
+    {
+      "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\emailTemplate\\forgotPassword.html",
+      "PackagePath": "staticwebassets\\emailTemplate\\forgotPassword.html"
+    },
+    {
       "Id": "C:\\Users\\seidb\\OneDrive\\Masaüstü\\FiorellaApp\\FiorelloApp\\FiorelloApp\\wwwroot\\img\\blog-feature-img-1.jpg",
       "PackagePath": "staticwebassets\\img\\blog-feature-img-1.jpg"
     },

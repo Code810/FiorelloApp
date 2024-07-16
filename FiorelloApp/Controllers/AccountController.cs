@@ -1,10 +1,9 @@
 ﻿using FiorelloApp.Helpers;
 using FiorelloApp.Models;
+using FiorelloApp.Services.Interfaces;
 using FiorelloApp.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
-using System.Net.Mail;
 
 namespace FiorelloApp.Controllers
 {
@@ -13,12 +12,14 @@ namespace FiorelloApp.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IEmailService _emailService;
 
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager)
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager, IEmailService emailService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _emailService = emailService;
         }
 
         public IActionResult Register()
@@ -50,26 +51,14 @@ namespace FiorelloApp.Controllers
             string token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
             string link = Url.Action(nameof(VerifyEmail), "Account", new { email = user.Email, token = token },
                 Request.Scheme, Request.Host.ToString());
-
-            MailMessage mailMessage = new MailMessage();
-            mailMessage.From = new MailAddress("nadirssh@code.edu.az", "Email Confirm Fiorella");
-            mailMessage.To.Add(new MailAddress(user.Email));
-            mailMessage.Subject = "Verify Email";
-            string body = $"<a href=`{link}`>Confirm email</a>";
-            mailMessage.IsBodyHtml = true;
-            mailMessage.Body = body;
-            using (StreamReader streamReader = new StreamReader("wwwroot/emailTemplate/htmlpage.html"))
+            string body = string.Empty;
+            using (StreamReader streamReader = new StreamReader("wwwroot/emailTemplate/emailConfirm.html"))
             {
                 body = streamReader.ReadToEnd();
             };
-            SmtpClient smtpClient = new()
-            {
-                Host = "smtp.gmail.com",
-                Port = 587,
-                EnableSsl = true,
-                Credentials = new NetworkCredential("nadirssh@code.edu.az", "ezts zpby grqu rvhp"),
-            };
-            smtpClient.Send(mailMessage);
+            body = body.Replace("{{link}}", link);
+            body = body.Replace("{{username}}", user.UserName);
+            _emailService.SendEmail(body, new() { user.Email }, "Email vertfication", "Verify email");
 
 
 
@@ -80,7 +69,7 @@ namespace FiorelloApp.Controllers
             AppUser appUser = await _userManager.FindByEmailAsync(email);
             if (appUser == null) return NotFound();
             await _userManager.ConfirmEmailAsync(appUser, token);
-            //await _signInManager.SignInAsync(appUser,true);
+            await _signInManager.SignInAsync(appUser, true);
             return RedirectToAction("index", "Home");
         }
 
@@ -146,5 +135,47 @@ namespace FiorelloApp.Controllers
                 await _roleManager.CreateAsync(new IdentityRole { Name = "superadmin" });
             return Content("roles added");
         }
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> ForgetPassword(string email)
+        {
+            AppUser appUser = await _userManager.FindByEmailAsync(email);
+            if (appUser == null)
+            {
+                ModelState.AddModelError("Error1", "Emaile aid istifadeci tapilmadi");
+                return View();
+            }
+            var token = await _userManager.GeneratePasswordResetTokenAsync(appUser);
+            string url = Url.Action(nameof(ResetPassword), "Account",
+                new { email = appUser.Email, token }, Request.Scheme, Request.Host.ToString());
+
+            string body = string.Empty;
+            using (StreamReader streamReader = new StreamReader("wwwroot/emailTemplate/forgotPassword.html"))
+            {
+                body = streamReader.ReadToEnd();
+            };
+            body = body.Replace("{{link}}", url);
+            _emailService.SendEmail(body, new() { appUser.Email }, "Forgot password", "reset pasword");
+
+
+            return RedirectToAction(nameof(Index), "home");
+        }
+        public IActionResult ResetPassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> ResetPassword(string email, string token, ResetPasswordVM resetPasswordVM)
+        {
+            var appUser = await _userManager.FindByEmailAsync(email);
+            if (!ModelState.IsValid) return View();
+            await _userManager.ResetPasswordAsync(appUser, token, resetPasswordVM.Password);
+
+            return RedirectToAction("login", "account");
+        }
     }
 }
+
